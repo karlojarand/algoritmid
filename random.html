@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Numbri arvamise mäng</title>
+    <meta name="description" content="Guess the number">
+    <meta name="author" content="Karl Ojarand">
+  </head>
+
+  <body>
+    <div class="container w-50">
+
+      <h2 class="text-center mb-3">Numbri arvamise mäng</h2>
+  
+      <form>
+        <div class="form-group ml-auto mr-auto">
+          <input type="number" id="guess" class="form-control" placeholder="Sisesta number">
+          <small class="form-text text-muted">Sisesta number 1-100</small>
+        </div>
+        <div class="text-center">
+          <button type="submit" id="submitbtn" class="btn btn-primary w-25">Arva!</button>
+        </div>
+      </form>
+  
+      <div id="result" class="mt text-center mt-3"></div>
+  </div>
+      
+      <script>
+// Genereerib suvalise numbri 1-100
+let correctNumber = getRandomInt(100);
+document.getElementById("submitbtn").addEventListener("click", function(event) {
+  event.preventDefault();
+  guessNumber(document.getElementById("guess").value);
+});
+
+function guessNumber(number) {
+
+  // Kontrollib, kas sisestatud number jääb vahemikku 1-100
+  if (number > 100 || number < 0) {
+    document.getElementById("result").innerHTML="Sisesta number vahemikus 1-100";
+  } else {
+    // Kui number on õige, edastatakse sõnum
+    if (number == correctNumber) {
+      document.getElementById("result").innerHTML="Arvasid õige numbri!"
+      // Kui pakutud number on liiga suur
+    } else if (number > correctNumber){
+      document.getElementById("result").innerHTML="Pakutud number oli liiga suur, paku VÄHEM!"
+      // Kui pakutud number on liiga väike
+    } else if (number < correctNumber) {
+      document.getElementById("result").innerHTML="Pakutud number oli liiga väike, paku ROHKEM!"
+    }
+  }
+}
+
+// Returns randomly generated number between 0 and the max number parameter value.
+function getRandomInt(max) {
+  return Math.floor(Math.random() * (Math.floor(max) + 1));
+}
+      </script>
+  </body>
+  </html>
