@@ -1,40 +1,68 @@
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hangman</title>
-    <link rel="stylesheet" href="hangman.css">
-    
+<title>Hangman</title>
+<meta charset="UTF-8">
+   <link href="hangman.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-    <div class="wrapper">
-        <h1>Hangman</h1>
-         <p>Kasuta tähti, et ära arvata sõna </p>
-     </div>
-     <div class="wrapper">
-         <div id="buttons">
-         </div>  
-         <p id="catagoryName"></p>
-         <div id="hold">
-         </div>
-         <p id="mylives"></p>
-         
-        
-         <div class="container">
-          
-            <button onClick="window.location.reload();">Mängi uuesti!</button>
-         </div>
-     </div>
+<body onload="getWord()">
 
-     <script src="hangman.js"></script>
-</body>
+<!-- Hangman using Singleton -->
+	<div></div>
+		<div id="header">
+		  <h1 style="float:left;">Hangman</h1>
+		</div>
+		<div id="header">
+			<h2  style="float:right;">Kasuta tähti, et ära arvata sõna</h2>
+		  </div>
+	
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm" id="panel_1">
+			</div>
+			<div id="keyboard">
+				<div>
+				  <button class="btn btn-light">A</button>
+				  <button class="btn btn-light">B</button>
+				  <button class="btn btn-light">C</button>
+				  <button class="btn btn-light">D</button>
+				  <button class="btn btn-light">E</button>
+				  <button class="btn btn-light">F</button>
+				  <button class="btn btn-light">G</button>
+				  <button class="btn btn-light">H</button>
+				  <button class="btn btn-light">I</button>
+				  <button class="btn btn-light">J</button>
+				  <button class="btn btn-light">K</button>
+				  <button class="btn btn-light">L</button>
+				  <button class="btn btn-light">M</button>
+				</div>
+				<div>
+				  <button class="btn btn-light">N</button>
+				  <button class="btn btn-light">O</button>
+				  <button class="btn btn-light">P</button>
+				  <button class="btn btn-light">Q</button>
+				  <button class="btn btn-light">R</button>
+				  <button class="btn btn-light">S</button>
+				  <button class="btn btn-light">T</button>
+				  <button class="btn btn-light">U</button>
+				  <button class="btn btn-light">V</button>
+				  <button class="btn btn-light">W</button>
+				  <button class="btn btn-light">X</button>
+				  <button class="btn btn-light">Y</button>
+				  <button class="btn btn-light">Z</button>
+				</div>
+			  </div>
+			<div class="col-sm" id="panel_2">
+			  <h2 id="guessString"></h2>
+			</div>
+		  </div>
+		</div>
+		<div id="newGame" hidden>
+			<button class="btn btn-warning" id="newGame_button">Uus mäng</button>
+		  </div>
+		  <script src="hangman.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </html>
-
- 
- 
- 
- 
